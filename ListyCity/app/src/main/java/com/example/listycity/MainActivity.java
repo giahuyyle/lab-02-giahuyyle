@@ -56,8 +56,9 @@ public class MainActivity extends AppCompatActivity {
         cityData = new ArrayList<>();
         cityData.addAll(Arrays.asList(cities));
 
-        cityAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_activated_1, cityData);
+        cityAdapter = new ArrayAdapter<>(this, R.layout.content, cityData);
         cityList.setAdapter(cityAdapter);
+        cityList.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
         cityList.setOnItemClickListener((parent, view, position, id) -> {
             selectedPosition = position;
             cityList.setItemChecked(position, true);
@@ -86,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
                 .setPositiveButton("CONFIRM", (d, w) -> {
                     String name = input.getText().toString().trim();
                     if (!name.isEmpty()) {
-                        cityData.add(new City(name));
+                        cityData.add(0, new City(name));
                         cityAdapter.notifyDataSetChanged();
                     }
                 })

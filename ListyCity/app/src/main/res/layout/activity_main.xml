@@ -31,7 +31,9 @@
         app:layout_constraintTop_toBottomOf="@id/title"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/add_city_button"/>
+        app:layout_constraintBottom_toTopOf="@id/add_city_button"
+        android:background="?attr/listChoiceBackgroundIndicator"
+    />
 
     <Button
         android:id="@+id/add_city_button"
